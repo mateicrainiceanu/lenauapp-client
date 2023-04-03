@@ -1,0 +1,362 @@
+html, body{
+    font-family: 'Oswald', sans-serif;
+    background-color: #1F4690;
+    height:100%;
+    overflow-x: hidden; /* Hide vertical scrollbar */
+  }
+  
+  /* navbar */
+  .navbar-background{
+    width:100%;
+    height:150px;
+    color: transparent;
+  }
+  
+  .navbar{
+    background-color: #E8AA42;
+    position: fixed;
+    text-align: center;
+    width: 96%;
+    padding: 0 1% ;
+    top: 0;
+    border-radius: 50px;
+    margin: 2%;
+    z-index: 2;
+  }
+
+  .navbar-toggler{
+    margin: 15px;
+  }
+  
+  .logo {
+    width: 10rem;
+    padding: 5%;
+  }
+  
+  .navbar-content{
+    align-content:left;
+  }
+  
+  /* body */
+  .container-fluid {
+    position: relative;
+    text-align: center;
+    padding: 0;
+  
+  }
+  
+  .centerd {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+  }
+  
+  .on-image, .borders{
+    padding:3%;
+    background-color: white;
+    opacity: 80%;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #231955;
+    position: absolute;
+    width: 80%;
+  }
+  
+  .nlenau-text{
+    font-family: 'Oswald', sans-serif;
+    font-size:6vw;
+  }
+  .nlenau-subtext{
+    font-family: 'Oswald', sans-serif;
+    font-size:4vw;
+  }
+  
+  #presentation {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow:hidden;
+  }
+
+  .poza-liceu{
+    margin: 0;
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /* directors */
+  
+  #directors{
+    background-color: #1F4690;
+  
+  }
+  
+  .all-directors{
+    padding: 0 30px;
+  }
+  
+  .director{
+    text-align: center;
+    margin:60px 30px;
+  
+  }
+  
+  .border-card{
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    border-width: 20px;
+    border-radius: 30px;
+    padding:0;
+  }
+  
+  .square-portrait-replacement{
+    padding: 0 0 10px;
+  }
+  
+  /* history */
+  
+  #history, .bg-2{
+    background-color:#FFE5B4;
+    padding: 2% 10%;
+  }
+  
+  /* performances */
+  
+  #performances{
+    color: black;
+    background-color: #FFE5B4;
+  }
+  
+  .performance{
+    padding: 5% 10%;
+  }
+  
+  .performance .row{
+    border-radius: 30px;
+    background-color: white;
+    padding: 5%;
+  }
+  
+  
+  .performance-img{
+    width: 100%;
+    position: relative;
+    border-radius: 30px;
+
+  }
+  
+  /* news */
+  /* cards */
+  
+  #news-cards{
+    padding: 0 2% 4%;
+  }
+
+  /* login & register */
+  #root{
+    min-height: 100%;
+  }
+
+  .form-element{
+    width: 100%;
+    padding: 1%;
+    margin: 1% 0;
+    text-align: center;
+  }
+
+  .form-padding{
+    padding:5% 0;
+  }
+
+  .login-form{
+    width: 60%;
+  }
+
+  
+  /* footer */
+  .footer{
+    background-color: #E8AA42;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 3.3rem;
+    position: relative;
+  }
+  
+  .footer-text{
+    color: #FFE5B4;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1% 0;
+  }
+
+  .on-page-centerd{
+    align-items: center;
+  }
+
+  .editable-addcard{
+    margin:0 10%;
+  }
+
+table, th, td{
+  border: 1px solid;
+}
+  
+.director-table{
+  height:100%;
+  top: 57.5%;
+    padding:5%;
+}
+  
+.black-text, .black-text:hover{
+  color: black;
+}
+
+.text-crem{
+  color: black;
+  text-align: center;
+}
+
+.padding-top{
+  padding: 5% 0 0 0;
+}
+
+.transp-table td{
+  border-style: solid;
+  border-right-width: 10px;
+  border-color: transparent;
+
+}
+
+.nowrap{
+  white-space: nowrap;
+}
+
+#conducere {
+  height: 100vh;
+}
+
+.update {
+  background-color: pink;
+}
+
+.sclpebg{
+  position:fixed;
+  width: 100vw;
+  height:100vh;
+  z-index: 0;
+}
+
+#prezentare-generala{
+  position: relative;
+}
+
+#oportunitati, .bg3{
+  background-color: #1F4690;
+  padding: 2% 10%;
+  color:#FFE5B4;
+}
+
+.text-mare{
+  font-size: large;
+}
+
+.nlenau{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  margin-bottom: 2%;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.nlenaupic{
+  max-width: 100%;
+}
+
+
+.margin-lr {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.right{
+  text-align: right;
+}
+
+.text-middle{
+  text-align: center;
+  margin: auto 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .col-lg-3, .col-lg-6{
+    margin-top: 2%;
+  }
+}
+
+.no-bullets{
+  list-style-type: none;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+.contact-btn-sec {
+  text-align: center;
+  margin:5%;
+  color: #1F4690
+} 
+
+.contact-btn-sec :hover{
+  color: #E8AA42;
+
+}
+
+.btn-theme {
+  font-size: 3rem;
+  background-color: #E8AA42;
+  padding: 0 3%;
+  color: #1F4690;
+  border-radius: 30px;
+
+}
+
+iframe{
+  border-radius: 30px;
+}
+
+.poezie p {
+  font-size: larger;
+}
+
+.lg-text{
+  font-size: 3rem;
+  
+}
+
+.lg-text h1{
+  font-size: 4rem;
+}
+
+
+.fit-content{
+  max-width: fit-content;
+  min-width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+embed {  
+  width:100%;
+  height: 70vh;
+}
+
+.embed{
+  padding: 5%;
+}
