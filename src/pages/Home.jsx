@@ -18,7 +18,7 @@ function Home(){
 
             </div>
                 
-                <News limit={4} navbarbg={false}/>
+                <News limit={4} navbarbg={false} category={"general"}/>
             </div>
             
             <Oportunitati />

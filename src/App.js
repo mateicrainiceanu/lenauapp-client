@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import PrezentareGenerala from "./pages/PrezentareGenerala";
 import Conducere from "./pages/Conducere";
 import Legislatie from "./pages/Legislatie";
+import Redirect from "./small_components/Redirect";
 
 import Login from "./pages/Login";
 
@@ -36,13 +37,14 @@ function App(){
       <Routes>
         <Route path="/" element={<Layout user={user}/>}>
           <Route index element={<Home />} />
-          <Route path="news" element={<News limit={null} navbarbg={true}/>} />
+          <Route path="news:category" element={<News limit={null} navbarbg={true} />} />
           <Route path="login" element={<Login setUser={setUser}/>}/>
           <Route path="user" element={<User user={user} setUser={setUser} resetUser={resetUser}/>}/>
           <Route path="prezentare-generala" element={<PrezentareGenerala />} />
           <Route path="conducerea" element={<Conducere/>}/>
           <Route path="contact" element={<Contact />} />
           <Route path="legislatie" element={<Legislatie />} />
+          <Route path="redirect:link" element={<Redirect />} />
 
           <Route path="*" element={<NoPage />} />
         </Route>

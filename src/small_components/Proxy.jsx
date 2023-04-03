@@ -1,3 +1,3 @@
-const proxy = "https://server.lenau.ro";
+const proxy = "http://localhost:3001";
 
 export default proxy;

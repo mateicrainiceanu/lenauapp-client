@@ -11,10 +11,10 @@ const Layout = (props) => {
       <Navbar user={props.user} />
       <Outlet />
       <footer>
-        <div class="footer">
-          <h6 class="footer footer-text">
+        <div className="footer">
+          <h6 className="footer footer-text">
             {anulCurent} © Liceu Teoretic "Nikolaus Lenau" |{" "}
-            <a class="footer-text" href="/login">
+            <a className="footer-text" href="/login">
               Login
             </a>
           </h6>

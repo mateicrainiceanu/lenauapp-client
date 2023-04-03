@@ -1,8 +1,17 @@
 import React, {useState, useEffect} from "react";
 import NewsComponent from "../small_components/news-component";
+import {useParams} from 'react-router-dom'
 import proxy from "../small_components/Proxy";
 
 function News(props){
+
+
+
+    let { category } = useParams();
+
+    var newscategory = category || ":general";
+
+    newscategory = newscategory.substring(1);
 
     const [news, setNews] = useState("null");
 
@@ -12,7 +21,8 @@ function News(props){
             body: JSON.stringify({
                 filter:{},
                 skip: 0,
-                limit: props.limit
+                limit: props.limit,
+                category: newscategory || "general"
             }),
             headers: {
                   'Content-type': 'application/json; charset=UTF-8'
@@ -40,7 +50,6 @@ function News(props){
                     ):(
                         news.news.map((newsComp, i) => (
                             <NewsComponent key={i} name={newsComp.name} paragraph={newsComp.paragraph} link={newsComp.link}/>
-
                         ))
                     )}
 

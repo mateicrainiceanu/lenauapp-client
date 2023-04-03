@@ -16,7 +16,10 @@ function EditNews (props) {
     function fetchNews(){
         const options = {
             method: "POST",
-            body: JSON.stringify({filter:filter}),
+            body: JSON.stringify({
+                filter:filter,
+                category:"any"
+            }),
             headers: {
                   'Content-type': 'application/json; charset=UTF-8'
                      }
@@ -59,6 +62,7 @@ function EditNews (props) {
                 return(
                 <tr key={i}>
                     <td>{newsComp.name}</td>
+                    <td>{newsComp.category}</td>
                     <td><button className="btn btn-light" onClick={deleteNews} name={newsComp.id}>Delete</button></td>
                 </tr>
                 );

@@ -1,8 +1,19 @@
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import proxy from './Proxy';
 
 function Navbar(props){
+
+  const [categories, setCategories] = useState([])
+
+  useEffect(()=>{
+    fetch(proxy + "/api/news/categories").then(response => response.json()).then(data => {
+      setCategories(data.categories);
+    })
+  }, [])
+
     return (
         <section id="navigation-bar">
     <nav className="navbar navbar-expand-lg">
@@ -28,7 +39,7 @@ function Navbar(props){
               </li>
         
               <li className="nav-item">
-                <Link to='/news' className="nav-link" >Noutati</Link>
+                <Link to='/news:general' className="nav-link" >Noutati</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/contact">Contact</a>
@@ -44,6 +55,17 @@ function Navbar(props){
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><Link to="/conducerea" className="dropdown-item">Management</Link></li>
                   <li><Link to="/legislatie" className="dropdown-item" >Legislație</Link></li>
+                </ul>
+              </li>
+
+              <li className="nav-item dropdown">
+                <a href="/" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  De interes
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {categories.map((category, i) => (
+                    <li key={i}><Link to={"/redirect:" + category} className="dropdown-item">{category}</Link></li>
+                  ))}
                 </ul>
               </li>
 
