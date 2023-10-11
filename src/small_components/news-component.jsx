@@ -12,7 +12,7 @@ function NewsComponent(props){
                     <hr/>
                     <p>{props.paragraph}</p>
                     <hr/>
-                    <a href={proxy+"file?name="+props.link}>File</a>
+                    <a href={proxy+"/file?name="+props.link}>File</a>
                 </div>
             </div>
         </React.Fragment>

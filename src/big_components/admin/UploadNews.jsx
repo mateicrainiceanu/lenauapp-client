@@ -37,7 +37,7 @@ function UploadNews(props) {
     setFile(event.target.files[0]);
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     const date = Date.now().toString() + "";
     const fileName = date + file.name;
 
@@ -45,7 +45,8 @@ function UploadNews(props) {
     fd.append("file", file);
 
     const URL = proxy + "/api/upload?name=" + date;
-    axios.post(URL, fd, {}).then((response) => {});
+    const resp = await axios.post(URL, fd, {})
+    console.log(resp);
 
     const options = {
       method: "POST",
