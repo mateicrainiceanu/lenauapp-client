@@ -4,7 +4,12 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import proxy from './Proxy';
 
-function Navbar(props){
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+function Navx(props){
 
   const [categories, setCategories] = useState([])
 
@@ -14,70 +19,71 @@ function Navbar(props){
     })
   }, [])
 
-    return (
-        <section id="navigation-bar">
-    <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid">
-        <a className="navbar-brand ju" href="/">
-          <img alt="logo" src="images/logo-lenau.png" className="d-inline-block align-text-top logo"/>
-        </a>
-        <a className="nav-link" href="/user">{props.user && <p>{props.user.username}</p>}</a>
-        <div className="navbar-content">
-          
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link to="/" className="nav-link" aria-current="page">Acasa</Link>
-              </li>
+  return (
+    <section id="navigation-bar">
+      <Navbar className="navbar navbar-expand-lg" expand="lg">
+        <Container>
+          <Navbar.Brand className="navbar-brand ju" href="/">
+            <img alt="logo" src="images/logo-lenau.png" className="d-inline-block align-text-top logo" />
+          </Navbar.Brand>
 
-              <li className="nav-item">
-                <a className="nav-link" href="/prezentare-generala">Despre noi</a>
-              </li>
-        
-              <li className="nav-item">
-                <Link to='/news:general' className="nav-link" >Noutati</Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact">Contact</a>
-              </li>
+          <Nav.Link as={Link} to="/user" className="nav-link" aria-current="page">
+            {props.user && <p>{props.user.username}</p>}
+          </Nav.Link>
 
-              <li className="nav-item">
-                <a className="nav-link" href="https://www.facebook.com/NikolausLenau"><i className="fa-brands fa-facebook-f"></i></a>
-              </li>
-              <li className="nav-item dropdown">
-                <a href="/" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Mai multe
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><Link to="/conducerea" className="dropdown-item">Management</Link></li>
-                  <li><Link to="/legislatie" className="dropdown-item" >Legislație</Link></li>
-                </ul>
-              </li>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-              <li className="nav-item dropdown">
-                <a href="/" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  De interes
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {categories.map((category, i) => (
-                    <li key={i}><Link to={"/redirect:" + category} className="dropdown-item">{category}</Link></li>
-                  ))}
-                </ul>
-              </li>
+          <Navbar.Collapse id="basic-navbar-nav" className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <Nav className=" navbar-nav ms-auto mb-2 mb-lg-0">
+              <Nav.Item className="nav-item">
+                <Nav.Link eventKey={1} as={Link} to="/" className="nav-link" aria-current="page">
+                  Acasa
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="nav-item">
+                <Link eventKey={2} to="/news:general" className="nav-link">
+                  Noutati
+                </Link>
+              </Nav.Item>
+              <Nav.Item className="nav-item">
+                <Nav.Link eventKey={3} as={Link} to="/prezentare-generala" className="nav-link" aria-current="page">
+                  Despre noi
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="nav-item">
+                <Nav.Link eventKey={4} as={Link} to="/contact" className="nav-link" aria-current="page">
+                  Contact
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="nav-item">
+                <Nav.Link eventKey={5} href="https://www.facebook.com/NikolausLenau" className="nav-link">
+                  <i className="fa-brands fa-facebook-f"></i>
+                </Nav.Link>
+              </Nav.Item>
 
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-    
-  </section>
+              <NavDropdown title="Mai multe" id="navbarDropdown">
+                <NavDropdown.Item as={Link} to="/conducerea">
+                  Management
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/legislatie">
+                  Legislație
+                </NavDropdown.Item>
+              </NavDropdown>
 
-    );
+              <NavDropdown title="De interes" id="navbarDropdown">
+                {categories.map((category, i) => (
+                  <NavDropdown.Item key={i} as={Link} to={"/redirect:" + category}>
+                    {category}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </section>
+  );
 }
 
-export default Navbar;
+
+export default Navx;

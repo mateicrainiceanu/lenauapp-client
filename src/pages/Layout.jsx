@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "../small_components/Navbar";
+import Navx from "../small_components/Navbar";
 
 const Layout = (props) => {
 
@@ -8,7 +8,7 @@ const Layout = (props) => {
 
   return (
     <>
-      <Navbar user={props.user} />
+      <Navx user={props.user} />
       <Outlet />
       <footer>
         <div className="footer">

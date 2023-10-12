@@ -45,6 +45,7 @@ function UploadNews(props) {
     fd.append("file", file);
 
     const URL = proxy + "/api/upload?name=" + date;
+    setStatus("wait")
     const resp = await axios.post(URL, fd, {})
     console.log(resp);
 
